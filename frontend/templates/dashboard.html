@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Student Task Manager{% endblock %}
+
+{% block content %}
+<section class="dashboard-grid" id="dashboard-root">
+  <div class="card-surface dashboard-hero">
+    <div class="dashboard-hero-header">
+      <div class="dashboard-hero-copy">
+        <p class="eyebrow">Dashboard</p>
+        <h1>
+          <span class="dashboard-username">{{ user.username }}</span>
+          <span class="dashboard-greeting-text">, here is your study plan for this week.</span>
+        </h1>
+      </div>
+      <a class="primary-btn inline-btn dashboard-hero-action" href="{{ url_for('views.task_form') }}">Add Assignment</a>
+    </div>
+    <p>
+      Tasks are automatically sorted from critical to low priority. Overdue and
+      urgent tasks are highlighted so you can act fast.
+    </p>
+  </div>
+
+  <div id="reminder-banner" class="card-surface reminder-banner hidden"></div>
+
+  <section class="card-surface stats-grid" id="summary-stats"></section>
+
+  <section class="card-surface">
+    <div class="section-head">
+      <h2>Urgent Tasks</h2>
+      <span class="subtle-text">Due in the next 24 hours</span>
+    </div>
+    <div id="urgent-list" class="task-list"></div>
+  </section>
+
+  <section class="card-surface">
+    <div class="section-head">
+      <h2>Missed Deadlines</h2>
+      <span class="subtle-text">Pending and already overdue</span>
+    </div>
+    <div id="overdue-list" class="task-list"></div>
+  </section>
+
+  <section class="card-surface">
+    <div class="section-head">
+      <h2>Tasks</h2>
+      <span class="subtle-text">Auto-sorted by urgency</span>
+    </div>
+    <div id="tasks-list" class="task-list"></div>
+  </section>
+
+
+
+  <section class="card-surface">
+    <div class="section-head">
+      <h2>Completed Tasks</h2>
+      <span class="subtle-text">Your finished assignments</span>
+    </div>
+    <div id="completed-list" class="task-list"></div>
+  </section>
+
+  <p id="dashboard-message" class="message"></p>
+</section>
+{% endblock %}
+

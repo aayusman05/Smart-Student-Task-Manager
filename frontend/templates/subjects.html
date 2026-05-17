@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Subjects - Student Task Manager{% endblock %}
+
+{% block content %}
+<section class="card-surface summary-page" id="subjects-root">
+  <div class="section-head">
+    <h1>Subjects</h1>
+    <a href="{{ url_for('views.task_form') }}" class="ghost-btn inline-btn">Add Task</a>
+  </div>
+
+  <p class="subtle-text">
+    Tasks grouped by subject to quickly review workload and progress.
+  </p>
+
+  <section id="subjects-groups" class="stacked-sections"></section>
+
+  <p id="subjects-message" class="message"></p>
+</section>
+{% endblock %}

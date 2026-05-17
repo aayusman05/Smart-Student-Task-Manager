@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Missed Tasks - Student Task Manager{% endblock %}
+
+{% block content %}
+<section class="card-surface" id="missed-page-root">
+  <div class="section-head">
+    <h1>Missed Tasks</h1>
+    <span class="subtle-text">Overdue tasks are highlighted in red so you can recover quickly.</span>
+  </div>
+
+  <section id="missed-stats" class="stats-grid"></section>
+
+  <section>
+    <h2>Overdue Task List</h2>
+    <div id="missed-list" class="task-list"></div>
+  </section>
+
+  <p id="missed-message" class="message"></p>
+</section>
+{% endblock %}

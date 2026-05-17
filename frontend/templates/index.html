@@ -1,0 +1,34 @@
+{% extends "auth_base.html" %}
+
+{% block title %}Login - Student Task Manager{% endblock %}
+
+{% block content %}
+<section class="auth-layout unified-auth-card card-surface">
+  <div class="auth-pane auth-intro">
+    <p class="eyebrow">Welcome back</p>
+    <h1>Track classes, deadlines, and study load in one place.</h1>
+    <p>
+      Sign in to see priority-sorted tasks, urgent reminders, calendar deadlines,
+      and a weekly productivity summary.
+    </p>
+  </div>
+
+  <div class="auth-pane auth-card">
+    <h2>Login</h2>
+    <form id="login-form" novalidate>
+      <label for="login-username">Username</label>
+      <input type="text" id="login-username" minlength="3" placeholder="Enter your username" required />
+
+      <label for="login-password">Password</label>
+      <input type="password" id="login-password" minlength="6" placeholder="••••••••" required />
+
+      <button type="submit" class="primary-btn">Login</button>
+    </form>
+    <p class="auth-switch">
+      New here?
+      <a href="{{ url_for('views.register_page') }}">Create an account</a>
+    </p>
+    <p id="auth-message" class="message"></p>
+  </div>
+</section>
+{% endblock %}

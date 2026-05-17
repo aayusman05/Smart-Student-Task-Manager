@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Task Form - Student Task Manager{% endblock %}
+
+{% block content %}
+<section class="task-form-page card-surface">
+  <div class="section-head">
+    <h1 id="form-title">Add Assignment</h1>
+    <a href="{{ url_for('views.dashboard') }}" class="ghost-btn inline-btn">Back to Dashboard</a>
+  </div>
+
+  <form id="task-form" class="task-grid" novalidate autocomplete="off">
+    <input type="hidden" id="task-id" />
+
+    <label for="title">Title</label>
+    <input type="text" id="title" placeholder="e.g., IS Chapter Book" required />
+
+    <label for="description">Description</label>
+    <textarea id="description" rows="4" placeholder="e.g., Read chapters 3-5 and summarize key points"></textarea>
+
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" placeholder="e.g., Services Science" />
+
+    <label for="task-type">Task Type</label>
+    <select id="task-type" required>
+      <option value="exam">Exam</option>
+      <option value="test">Quiz/Test</option>
+      <option value="assignment" selected>Assignment</option>
+      <option value="project">Project</option>
+      <option value="homework">Homework</option>
+      <option value="lab_report">Lab Report</option>
+      <option value="presentation">Presentation</option>
+      <option value="reading">Reading</option>
+      <option value="group_work">Group Work</option>
+      <option value="extra_credit">Extra Credit</option>
+    </select>
+
+    <label for="deadline">Deadline (Date & Time)</label>
+    <input type="datetime-local" id="deadline" required />
+
+    <div id="status-field" class="status-field">
+      <label for="status">Status</label>
+      <select id="status">
+        <option value="pending" selected>Pending</option>
+        <option value="completed">Completed</option>
+      </select>
+    </div>
+
+    <div id="priority-preview" class="priority-preview"></div>
+
+    <div class="form-actions">
+      <button type="submit" class="primary-btn">Save Task</button>
+      <a href="{{ url_for('views.dashboard') }}" class="ghost-btn inline-btn">Cancel</a>
+    </div>
+  </form>
+
+  <p id="task-form-message" class="message"></p>
+</section>
+{% endblock %}

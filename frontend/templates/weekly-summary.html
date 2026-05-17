@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Weekly Summary - Student Task Manager{% endblock %}
+
+{% block content %}
+<section class="card-surface summary-page" id="weekly-summary-root">
+  <div class="section-head">
+    <h1>Weekly Summary</h1>
+  </div>
+
+  <p class="subtle-text">
+    View completed, pending, and missed tasks along with subject-wise workload.
+  </p>
+
+  <section id="weekly-summary-cards" class="stats-grid"></section>
+
+  <section class="summary-layout">
+    <div>
+      <h2>Subject-wise Workload</h2>
+      <ul id="subject-workload" class="flat-list"></ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>This Week Tasks</h2>
+    <div id="weekly-task-list" class="task-list"></div>
+  </section>
+
+  <p id="weekly-summary-message" class="message"></p>
+</section>
+{% endblock %}
